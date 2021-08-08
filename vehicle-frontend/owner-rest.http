@@ -1,0 +1,36 @@
+POST http://localhost:8080/api/owner
+Content-Type: application/json
+
+{
+  "fullName": "Szabó Sanyi",
+  "legsNumber": 14,
+  "hornNumber": 17,
+  "alma": "körte",
+  "ownerID": 1
+}
+
+###
+
+PUT http://localhost:8080/api/owner
+Content-Type: application/json
+
+{
+  "id": 5,
+  "name": "Fecske",
+  "legsNumber": 14,
+  "hornNumber": 17,
+  "alma": "körte",
+  "ownerID": 1
+}
+
+###
+GET http://localhost:8080/api/owner
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/owner/5
+Accept: application/json
+
+###
+
