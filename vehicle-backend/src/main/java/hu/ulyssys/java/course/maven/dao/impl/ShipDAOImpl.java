@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
-public class ShipDAOImpl extends CoreDAOImpl<Ship> implements ShipDAO {
+public class ShipDAOImpl extends AbstractOwnerAwareDAOImpl<Ship> implements ShipDAO {
     @Override
     protected Class<Ship> getManagedClass() {
         return Ship.class;

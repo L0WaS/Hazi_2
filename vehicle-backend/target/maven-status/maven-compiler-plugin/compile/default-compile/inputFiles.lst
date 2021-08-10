@@ -1,4 +1,5 @@
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\impl\ShipDAOImpl.java
+D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\service\impl\AbstractOwnerServiceImpl.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\PlaneDAO.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\service\impl\PlaneServiceImpl.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\impl\CoreDAOImpl.java
@@ -9,8 +10,10 @@ D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\mave
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\service\impl\VehiclePrinterServiceImpl.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\impl\CarDAOImpl.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\ShipDAO.java
+D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\impl\AbstractOwnerAwareDAOImpl.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\impl\PlaneDAOImpl.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\service\impl\CarServiceImpl.java
+D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\OwnerAwareDAO.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\CoreDAO.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\dao\OwnerDAO.java
 D:\Ulyssys\javaee-demo\vehicle-backend\src\main\java\hu\ulyssys\java\course\maven\service\impl\ShipServiceImpl.java

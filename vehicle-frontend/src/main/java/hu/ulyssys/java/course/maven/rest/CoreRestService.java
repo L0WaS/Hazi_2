@@ -3,6 +3,7 @@ package hu.ulyssys.java.course.maven.rest;
 import hu.ulyssys.java.course.maven.entity.AbstractVehicle;
 import hu.ulyssys.java.course.maven.rest.model.CoreRestModel;
 import hu.ulyssys.java.course.maven.service.CoreService;
+import hu.ulyssys.java.course.maven.service.OwnerAwareService;
 import hu.ulyssys.java.course.maven.service.OwnerService;
 
 import javax.inject.Inject;
@@ -19,13 +20,38 @@ public abstract class CoreRestService<T extends AbstractVehicle, M extends CoreR
     @Inject
     private OwnerService ownerService;
     @Inject
-    private CoreService<T> carService;
+    private CoreService<T> coreService;
+    @Inject
+    private OwnerAwareService<T> ownerAwareService;
+
+
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
+    public Response findByID(@PathParam("id") Long id) {
+        T entity = coreService.findById(id);
+        if (entity == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(createModelFromEntity(entity)).build();
+
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/owner/{id}")
+    public Response findByOwnerId(@PathParam("id") Long id) {
+        return Response.ok(ownerAwareService.findByOwnerId(id).stream().map(this::createModelFromEntity).collect(Collectors.toList())).build();
+
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response findAll() {
-        return Response.ok(carService.getAll().stream().map(this::createModelFromEntity).collect(Collectors.toList())).build();
+        return Response.ok(coreService.getAll().stream().map(this::createModelFromEntity).collect(Collectors.toList())).build();
     }
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -35,7 +61,7 @@ public abstract class CoreRestService<T extends AbstractVehicle, M extends CoreR
         T entity = initNewEntity();
         populateEntityFromModel(entity, model);
 
-        carService.add(entity);
+        coreService.add(entity);
         return Response.ok(createModelFromEntity(entity)).build();
     }
 
@@ -43,12 +69,12 @@ public abstract class CoreRestService<T extends AbstractVehicle, M extends CoreR
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@Valid M model) {
-        T entity = carService.findById(model.getId());
+        T entity = coreService.findById(model.getId());
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         populateEntityFromModel(entity, model);
-        carService.update(entity);
+        coreService.update(entity);
         return Response.ok(createModelFromEntity(entity)).build();
 
     }
@@ -57,11 +83,11 @@ public abstract class CoreRestService<T extends AbstractVehicle, M extends CoreR
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@PathParam("id") Long id) {
-        T entity = carService.findById(id);
+        T entity = coreService.findById(id);
         if (entity == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        carService.remove(entity);
+        coreService.remove(entity);
         return Response.ok().build();
     }
 

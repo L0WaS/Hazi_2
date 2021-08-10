@@ -6,6 +6,7 @@ hu\ulyssys\java\course\maven\entity\AbstractVehicle.class
 hu\ulyssys\java\course\maven\entity\Car.class
 hu\ulyssys\java\course\maven\service\ShipService.class
 hu\ulyssys\java\course\maven\service\CarService.class
+hu\ulyssys\java\course\maven\service\OwnerAwareService.class
 hu\ulyssys\java\course\maven\ejb\EJBDemoMbean.class
 hu\ulyssys\java\course\maven\entity\VehicleType.class
 hu\ulyssys\java\course\maven\entity\VehicleTypeAware.class

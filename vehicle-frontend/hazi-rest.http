@@ -1,0 +1,25 @@
+GET http://localhost:8080/api/owner
+Accept: application/json
+
+###
+GET http://localhost:8080/api/car
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/car/3
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/car/owner/3
+Accept: application/json
+
+###
+
+###
+
+GET http://localhost:8080/api/plane/owner/6
+Accept: application/json
+
+###

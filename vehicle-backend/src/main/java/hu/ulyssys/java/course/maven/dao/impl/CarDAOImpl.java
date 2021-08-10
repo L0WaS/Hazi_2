@@ -6,7 +6,7 @@ import hu.ulyssys.java.course.maven.entity.Car;
 import javax.ejb.Stateless;
 
 @Stateless
-public class CarDAOImpl extends CoreDAOImpl<Car> implements CarDAO {
+public class CarDAOImpl extends AbstractOwnerAwareDAOImpl<Car> implements CarDAO {
     @Override
     protected Class<Car> getManagedClass() {
         return Car.class;

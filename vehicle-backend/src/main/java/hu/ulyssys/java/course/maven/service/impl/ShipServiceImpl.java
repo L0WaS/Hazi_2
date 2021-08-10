@@ -7,5 +7,5 @@ import hu.ulyssys.java.course.maven.service.ShipService;
 import javax.ejb.Stateless;
 
 @Stateless
-public class ShipServiceImpl extends AbstractServiceImpl<Ship> implements ShipService {
+public class ShipServiceImpl extends AbstractOwnerServiceImpl<Ship> implements ShipService {
 }

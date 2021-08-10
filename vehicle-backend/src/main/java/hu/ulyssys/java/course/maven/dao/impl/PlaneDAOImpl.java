@@ -6,7 +6,7 @@ import hu.ulyssys.java.course.maven.entity.Plane;
 import javax.ejb.Stateless;
 
 @Stateless
-public class PlaneDAOImpl extends CoreDAOImpl<Plane> implements PlaneDAO {
+public class PlaneDAOImpl extends AbstractOwnerAwareDAOImpl<Plane> implements PlaneDAO {
     @Override
     protected Class<Plane> getManagedClass() {
         return Plane.class;

@@ -7,5 +7,5 @@ import hu.ulyssys.java.course.maven.service.PlaneService;
 import javax.ejb.Stateless;
 
 @Stateless
-public class PlaneServiceImpl extends AbstractServiceImpl<Plane> implements PlaneService {
+public class PlaneServiceImpl extends AbstractOwnerServiceImpl<Plane> implements PlaneService {
 }
